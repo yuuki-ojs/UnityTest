@@ -16,15 +16,16 @@ namespace TestProject
 
         public LogHandler()
         {
+            logText = GameObject.FindWithTag("UI").GetComponent<Text>();
             //デバッグの場合のみ
             if (Debug.isDebugBuild)
             {
                 // ログが出力されたときのイベントに画面出力を追加
-                Application.logMessageReceived += (string condition, string stackTrace, LogType type) =>
-                {
-                    logText.text += condition + LF;
-                    Debug.Log("stackTrace : " + stackTrace);
-                };
+                //Application.logMessageReceived += (string condition, string stackTrace, LogType type) =>
+                //{
+                //    logText.text += condition + LF;
+                //    Debug.Log("stackTrace : " + stackTrace);
+                //};
             }
         }
 
